@@ -1,39 +1,51 @@
 # John Barreto
 
-**Independent Natural Gas Researcher**  
-Henry Hub fundamentals · Energy market analytics · Quantitative research · Data engineering
+**Independent natural gas research · Henry Hub · Portugal**
 
-My research examines the relationship between physical natural gas markets, weather, underground storage, forward pricing and industrial energy costs. I develop interactive research tools, investigate historical evidence and document methods and limitations.
+I study how weather, storage and the forward curve shape the North American natural gas market. I publish interactive tools, source data and methods so readers can inspect the evidence behind a result and understand its limits.
 
-**[Explore my research portfolio](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/) · [Read research publications](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/research/) · [Data status](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/api/status.html)**
+## Start with a question
 
-## Selected projects
+- **Does weather improve a storage estimate?** Read the [storage research note](https://neurax-jb.github.io/natural-gas-research-notes/lab/research/storage-weather.html) and inspect the [storage dashboard](https://neurax-jb.github.io/henry-hub-storage-forecaster/).
+- **What changed for the same delivery month?** Compare dates in the [futures curve explorer](https://neurax-jb.github.io/henry-hub-futures-curve/).
+- **What could a fixed-price share do to a factory's gas bill?** Try the [industrial cost simulator](https://neurax-jb.github.io/industrial-gas-cost-simulator/), with its delivery-price assumptions shown separately.
 
-| Project | Focus |
-| :--- | :--- |
-| [Henry Hub Storage Forecaster](https://github.com/NeuraX-JB/henry-hub-storage-forecaster) · [Explore](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/storage/) | Weather-adjusted U.S. natural gas storage nowcasts, chronological backtests and a timestamped forecast ledger. |
-| [Natural Gas Weather Monitor](https://github.com/NeuraX-JB/natural-gas-weather-monitor) · [Explore](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/weather/) | Compare archived NOAA GFS forecast runs, regional HDD/CDD revisions and common valid dates. |
-| [Henry Hub Futures Curve Explorer](https://github.com/NeuraX-JB/henry-hub-futures-curve) · [Explore](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/) | Analyze historical Henry Hub futures curves, delivery-month repricing, winter premiums and calendar spreads. |
-| [Industrial Gas Cost Simulator](https://github.com/NeuraX-JB/industrial-gas-cost-simulator) · [Explore](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/industrial/) | Replay industrial winter gas costs and compare floating versus fixed-share procurement scenarios. |
-| [Natural Gas Data API](https://github.com/NeuraX-JB/natural-gas-data-api) · [Explore](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/api/) | Versioned static JSON endpoints for EIA storage, NOAA degree days and Henry Hub spot prices. |
-| [Natural Gas Research Notes](https://github.com/NeuraX-JB/natural-gas-research-notes) · [Explore](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/research/) | Independent natural gas market studies, documented findings, methods and research limitations. |
+## A result you can examine
 
-## Featured research
+In a **retrospective storage nowcast replay**, adding observed weather reduced the average absolute weekly miss by **10.00 billion cubic feet (Bcf)** against a five-year seasonal median.
 
-A historical storage nowcast replay found 20.50 Bcf mean absolute error using observed weather, compared with 30.50 Bcf for a five-year seasonal median, across 463 common evaluation weeks.
+| Evaluation | Observed-weather model | Seasonal median |
+| :--- | ---: | ---: |
+| Mean absolute error (Bcf) | 20.50 | 30.50 |
+| Identical weekly evaluation dates | 463 | 463 |
 
-This is a **32.8% reduction in historical error**, not verified live forecasting performance. The study uses current-vintage observations; original historical publication timing is not fully established.
+**Period:** 5 January 2018–13 November 2026. **Relative error reduction:** 32.8%. MAE is the average size of a miss, regardless of its direction; lower is better. The values above describe this recorded sample, not an expected future error.
 
-[Read the storage research note](https://github.com/NeuraX-JB/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/blob/main/lab/research/storage-weather.md)
+The replay uses current-vintage observations. Original historical publication timing is not established for every input, so this is **not verified performance from forecasts issued before each EIA release**. There were **zero completed scored live forecasts** in the 23 November 2026 snapshot. The reported interval covered 78.2% of the evaluated observations; that is measured coverage, not a guarantee.
 
-## Research interests
+Inspect the frozen [weekly results](https://github.com/NeuraX-JB/henry-hub-storage-forecaster/blob/30148e34f458c2caa057ce36472e3a457f04064f/lab/storage/backtest.csv), [model code](https://github.com/NeuraX-JB/henry-hub-storage-forecaster/blob/30148e34f458c2caa057ce36472e3a457f04064f/lab/storage/model.py), and [recorded model state](https://github.com/NeuraX-JB/henry-hub-storage-forecaster/blob/30148e34f458c2caa057ce36472e3a457f04064f/lab/storage/state.json). The [project instructions](https://github.com/NeuraX-JB/henry-hub-storage-forecaster#readme) explain how to run the tests and reproduce the replay.
 
-- North American natural gas fundamentals and Henry Hub pricing
-- Meteorology, heating and cooling degree days, and storage balances
-- Futures curves, delivery-month repricing and seasonality
-- Industrial energy procurement and fuel economics
-- Reproducible data pipelines and quantitative research
+## Research tools and evidence
 
-**Tools:** Python · NumPy · JavaScript · HTML/CSS · Jupyter · GitHub Actions
+These are research snapshots and historical scenarios. Each repository contains its own code and documentation; its demo serves that repository's reviewed version. The original [research lab](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/) remains the separate home of ongoing data refreshes.
 
-Research and educational work; not investment advice.
+| Project | Question it helps investigate | Evidence type | Open |
+| :--- | :--- | :--- | :--- |
+| Storage forecaster | Does observed weather improve a seasonal storage estimate? | Historical replay; live record not established | [Demo](https://neurax-jb.github.io/henry-hub-storage-forecaster/) · [Code](https://github.com/NeuraX-JB/henry-hub-storage-forecaster) |
+| Weather revision monitor | Where did demand-related temperature exposure change between forecast runs? | Archived GFS comparisons on common valid dates | [Demo](https://neurax-jb.github.io/natural-gas-weather-monitor/) · [Code](https://github.com/NeuraX-JB/natural-gas-weather-monitor) |
+| Futures curve explorer | How did the market reprice the same delivery contracts? | Historical curves and reconstructed examples | [Demo](https://neurax-jb.github.io/henry-hub-futures-curve/) · [Code](https://github.com/NeuraX-JB/henry-hub-futures-curve) |
+| Industrial gas cost simulator | How do procurement assumptions change historical fuel costs? | Illustrative Henry Hub cost scenarios | [Demo](https://neurax-jb.github.io/industrial-gas-cost-simulator/) · [Code](https://github.com/NeuraX-JB/industrial-gas-cost-simulator) |
+| Natural gas data API | How can storage, weather and price observations be joined consistently? | Static JSON/CSV datasets with source metadata | [Demo](https://neurax-jb.github.io/natural-gas-data-api/) · [Code](https://github.com/NeuraX-JB/natural-gas-data-api) |
+| Research notes | What can the studies establish, and what remains untested? | Methods, findings and limitations | [Read](https://neurax-jb.github.io/natural-gas-research-notes/) · [Sources](https://github.com/NeuraX-JB/natural-gas-research-notes) |
+
+## How I work
+
+I use Python and NumPy for data preparation and statistical work, JavaScript for interactive inspection, and versioned datasets and automated checks for reproducibility. I distinguish observed data from forecasts, calendar spreads from outright prices, and historical fit from evidence available at a real decision cutoff.
+
+Current priorities are regional weather inputs, source-release timing, frozen forecasts and evaluation across winters. These are research questions, not claims that the current portfolio has solved them.
+
+## Corrections and review
+
+Found an error or a conclusion that goes beyond its evidence? Open an issue in the relevant repository with the page, input values or dates, observed result, and expected behavior. Each project has a structured correction form.
+
+See the [100-point review and fixes](AUDIT_100.md) for the dated change record and verification details. Research and educational work; not investment advice.

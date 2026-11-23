@@ -1,0 +1,1273 @@
+[
+  {
+    "id": 1,
+    "repo": "NeuraX-JB",
+    "issue": "The introduction describes interests without telling a reader what they can inspect.",
+    "evidence_before": "Opening paragraph lists research subjects and activities.",
+    "fix": "Rewrite the introduction around inspectable evidence and replace the keyword-stuffed public bio with plain research language.",
+    "paths": [
+      "README.md"
+    ],
+    "ui_locations": [
+      "GitHub profile bio"
+    ],
+    "verification": "Editorial comparison with the baseline; new bio saved through GitHub profile controls."
+  },
+  {
+    "id": 2,
+    "repo": "NeuraX-JB",
+    "issue": "There is no recommended route into six unrelated-looking projects.",
+    "evidence_before": "The first navigation is a flat Selected projects table.",
+    "fix": "Add three concrete reader questions with direct study/tool entrypoints.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "Check each route against the matching project."
+  },
+  {
+    "id": 3,
+    "repo": "NeuraX-JB",
+    "issue": "Projects of different evidential maturity appear equivalent.",
+    "evidence_before": "Focus column does not classify archive, replay, scenario or dataset.",
+    "fix": "Add an Evidence type column distinguishing each project\u2019s role.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "Compare classifications with project source and limitations."
+  },
+  {
+    "id": 4,
+    "repo": "NeuraX-JB",
+    "issue": "The main research result is buried beneath the complete project directory.",
+    "evidence_before": "Featured research follows six large project rows.",
+    "fix": "Place the worked result before the detailed directory.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "Rendered profile reading-order review."
+  },
+  {
+    "id": 5,
+    "repo": "NeuraX-JB",
+    "issue": "The headline performance figure has no evaluation dates on the profile.",
+    "evidence_before": "Profile says 463 weeks without start/end dates.",
+    "fix": "State 5 January 2018\u201313 November 2026 beside the comparison.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "Dates match storage/state.json and the frozen replay."
+  },
+  {
+    "id": 6,
+    "repo": "NeuraX-JB",
+    "issue": "Mean absolute error is not defined for a new reader.",
+    "evidence_before": "Profile gives MAE values but no plain-language interpretation.",
+    "fix": "Explain average absolute miss and that lower is better.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "Definition agrees with the recorded research method."
+  },
+  {
+    "id": 7,
+    "repo": "NeuraX-JB",
+    "issue": "The relative improvement lacks an absolute change alongside it.",
+    "evidence_before": "Only 32.8 percent relative improvement is emphasized.",
+    "fix": "Show the 10.00 Bcf absolute difference and both baseline/model values.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "30.503239740820735 \u2212 20.50133495446041 rounds to 10.00 Bcf."
+  },
+  {
+    "id": 8,
+    "repo": "NeuraX-JB",
+    "issue": "The profile leaves the absence of scored live forecasts implicit.",
+    "evidence_before": "Caveat says performance is not verified live, but omits the live-score count.",
+    "fix": "State zero completed scored live forecasts in the dated snapshot.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "storage/state.json live_score.n equals 0."
+  },
+  {
+    "id": 9,
+    "repo": "NeuraX-JB",
+    "issue": "Readers cannot directly inspect frozen evidence from the profile.",
+    "evidence_before": "The single research link points to a mutable main-branch note.",
+    "fix": "Link exact-commit results CSV, model source and model state, plus reproduction instructions.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "Targets use published storage commit 30148e34\u2026; source data verified."
+  },
+  {
+    "id": 10,
+    "repo": "NeuraX-JB",
+    "issue": "The tool list does not explain the research process.",
+    "evidence_before": "Tools are presented as a list of technologies.",
+    "fix": "Explain the role of each tool and how observations, forecasts and decision cutoffs are distinguished.",
+    "paths": [
+      "README.md"
+    ],
+    "verification": "Editorial review against actual repository methods."
+  },
+  {
+    "id": 11,
+    "repo": "portfolio-wide",
+    "issue": "There is no structured way to report a research or interface error.",
+    "evidence_before": "Profile has no correction route; repositories have no issue template.",
+    "fix": "Add a correction section and form requesting location, inputs, observed/expected behavior and evidence.",
+    "paths": [
+      "README.md",
+      ".github/ISSUE_TEMPLATE/research-correction.yml"
+    ],
+    "verification": "Validate template YAML and inspect the published form."
+  },
+  {
+    "id": 12,
+    "repo": "portfolio-wide",
+    "issue": "The new snapshots lack a machine-readable source revision record.",
+    "evidence_before": "Root READMEs link the canonical repo, but there is no structured baseline manifest.",
+    "fix": "Record source revision, reviewed baseline and publication mode in SOURCE_SNAPSHOT.json.",
+    "paths": [
+      "SOURCE_SNAPSHOT.json"
+    ],
+    "verification": "Compare source/base commit identifiers with GitHub branches and original package metadata."
+  },
+  {
+    "id": 13,
+    "repo": "portfolio-wide",
+    "issue": "Running verification requires finding scattered project-specific commands.",
+    "evidence_before": "Tests exist in several subdirectories with no common launcher.",
+    "fix": "Provide python scripts/validate.py and documented setup.",
+    "paths": [
+      "scripts/validate.py",
+      "scripts/checks.json",
+      "VALIDATION.md"
+    ],
+    "verification": "Run the same command locally and in CI."
+  },
+  {
+    "id": 14,
+    "repo": "portfolio-wide",
+    "issue": "Broken HTML and stylesheet references have no automatic detection.",
+    "evidence_before": "No local web-link validation exists in the published repositories.",
+    "fix": "Check relative targets, project-root compatibility, directory entrypoints and cross-file HTML anchors.",
+    "paths": [
+      "scripts/validate.py"
+    ],
+    "verification": "Run against project HTML/CSS; missing targets, root-relative links and missing cross-file HTML anchors fail. Same-page fragment-only links are not checked."
+  },
+  {
+    "id": 15,
+    "repo": "portfolio-wide",
+    "issue": "Broken Markdown documentation links have no automatic detection.",
+    "evidence_before": "Copied DATA_SOURCES links target omitted folders in multiple repos.",
+    "fix": "Validate Markdown link targets after excluding fenced code examples.",
+    "paths": [
+      "scripts/validate.py"
+    ],
+    "verification": "Initial check catches absent copied attribution links; corrected repos pass."
+  },
+  {
+    "id": 16,
+    "repo": "portfolio-wide",
+    "issue": "JSON artifacts can become invalid without a repository-wide check.",
+    "evidence_before": "No shared strict parser validates JSON and notebooks on changes.",
+    "fix": "Reject invalid syntax, duplicate keys and non-standard numeric constants.",
+    "paths": [
+      "scripts/validate.py"
+    ],
+    "verification": "Parse all published JSON/notebooks with strict rules; regression fixtures exercise rejection."
+  },
+  {
+    "id": 17,
+    "repo": "portfolio-wide",
+    "issue": "A code-cleanup commit can accidentally change the frozen research inputs.",
+    "evidence_before": "Published split repos have no preservation check tied to their review baseline.",
+    "fix": "Hash frozen CSVs and selected observation/state JSON; fail when bytes change.",
+    "paths": [
+      "SOURCE_SNAPSHOT.json",
+      "scripts/validate.py"
+    ],
+    "verification": "Hashes match pre-review packages; altered-fixture check fails."
+  },
+  {
+    "id": 18,
+    "repo": "portfolio-wide",
+    "issue": "The repositories lack automated verification on future pushes and pull requests.",
+    "evidence_before": "No .github/workflows exists in the published snapshots.",
+    "fix": "Add a read-only verification workflow with pinned actions, explicit runtimes and validation dependencies.",
+    "paths": [
+      ".github/workflows/verify.yml",
+      "scripts/requirements-ci.txt"
+    ],
+    "verification": "Local regression suites and the published GitHub Actions run."
+  },
+  {
+    "id": 19,
+    "repo": "portfolio-wide",
+    "issue": "Local runtime artifacts and environment files are not excluded from commits.",
+    "evidence_before": "No .gitignore exists in the published split repos.",
+    "fix": "Ignore Python caches, virtual environments, node_modules and local .env files.",
+    "paths": [
+      ".gitignore"
+    ],
+    "verification": "git check-ignore confirms representative generated/local paths are excluded."
+  },
+  {
+    "id": 20,
+    "repo": "portfolio-wide",
+    "issue": "The repositories\u2019 demo links do not serve their own reviewed code.",
+    "evidence_before": "All original Explore links point to the canonical research site; Pages is disabled for the inspected new repository.",
+    "fix": "Publish standalone project demos from the new repositories and direct profile links to them.",
+    "paths": [
+      "README.md",
+      ".nojekyll"
+    ],
+    "ui_locations": [
+      "GitHub Pages settings"
+    ],
+    "verification": "Verify deployed root/app pages and their current repository source."
+  },
+  {
+    "id": 21,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "The standalone project has no root web entry and its app home link leads to a placeholder.",
+    "evidence_before": "Baseline tree has no index.html; lab/storage/index.html links ../ to lab/index.html, whose only destination is the canonical lab.",
+    "fix": "Add an accessible project landing page, route app navigation home locally, and direct README visitors to the standalone demo.",
+    "paths": [
+      "index.html",
+      "lab/index.html",
+      "lab/storage/index.html",
+      "README.md"
+    ],
+    "verification": "Static link validator passes all local destinations; inspected heading, skip-link, responsive layout CSS and historical-status text. The deployed landing and storage tool were opened in the cloud browser."
+  },
+  {
+    "id": 22,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "Storage attribution sends readers to source files absent from this extracted repository.",
+    "evidence_before": "DATA_SOURCES.md links lab/weather/README.md, lab/weather/research/US_ATLAS_LICENSE and lab/api/v1/index.json, none present in the baseline tree.",
+    "fix": "Replace copied cross-project attribution with the EIA/CPC sources and local shared-data provenance actually used by storage research.",
+    "paths": [
+      "DATA_SOURCES.md"
+    ],
+    "verification": "All rewritten relative links pass scripts/validate.py --static-only."
+  },
+  {
+    "id": 23,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "The dashboard omits snapshot and target qualifications needed to interpret its estimate.",
+    "evidence_before": "lab/storage/index.html says Current forecast and describes gas entering or leaving storage; app.js never renders state.json as_of (2026-11-23T00:56:53Z) and labels stock changes as injections/withdrawals. Replay vintage limits are inside collapsed method notes, and the stock-change sign convention omits reclassifications.",
+    "fix": "Display the historical snapshot date above the app, identify the separately maintained canonical dashboard, and put retrospective/current-vintage limits directly next to replay scores. Describe the target as working-gas stock change, label increases/decreases accordingly, and explain that net stock changes can include reclassifications and need not equal physical flows. Version the JavaScript URL from its content hash so a previously cached script does not retain the superseded terminology.",
+    "paths": [
+      "lab/storage/index.html",
+      "lab/storage/app.js",
+      "lab/storage/storage.css"
+    ],
+    "verification": "Checked displayed timestamp against state.json; archived values and zero completed live scores remain unchanged; static data-hash validation passes. Live browser review prompted the stock/flow wording clarification and exposed an older cached app.js after an ordinary reload. The version query matches the first 12 SHA-256 characters of the corrected script; existing storage tests pass after both follow-ups. After the final deployment, a live reload displayed the corrected hero and Estimated stock decrease label."
+  },
+  {
+    "id": 24,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "Missing storage values are formatted as zero.",
+    "evidence_before": "app.js format uses Number(value), so format(null) becomes 0; sign also applies numeric coercion. Invalid date values can throw during formatting.",
+    "fix": "Require finite numbers, display an em dash for missing/nonfinite values, and handle invalid dates explicitly.",
+    "paths": [
+      "lab/storage/app.js",
+      "lab/storage/app.test.cjs"
+    ],
+    "verification": "Node regression covers null, undefined, NaN, Infinity, numeric strings, genuine zero and negative values."
+  },
+  {
+    "id": 25,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "An empty replay history crashes chart rendering instead of showing an empty state.",
+    "evidence_before": "chart([]) still computes label indices and reads rows[i].week; historyTable([]) produces an unexplained blank table.",
+    "fix": "Show explicit empty-chart, empty-table and no-evaluation messages before numeric/date rendering.",
+    "paths": [
+      "lab/storage/app.js",
+      "lab/storage/app.test.cjs"
+    ],
+    "verification": "Node regression invokes chart([]) and validates an empty snapshot; no invalid observation access occurs."
+  },
+  {
+    "id": 26,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "A one-week replay is invisible and repeats the same date labels.",
+    "evidence_before": "chart() draws only polylines; a one-coordinate polyline has no segment. The fixed 3/6-label loop repeats that observation.",
+    "fix": "Center a single observation, draw three visible markers, and limit labels to available weeks.",
+    "paths": [
+      "lab/storage/app.js",
+      "lab/storage/app.test.cjs"
+    ],
+    "verification": "Single-week chart regression asserts three circle markers and no NaN coordinates."
+  },
+  {
+    "id": 27,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "Overflowing storage tables are not reachable as scroll regions by keyboard.",
+    "evidence_before": "Both table-scroll containers lack tabindex/region labels; column headers lack scope and model/baseline columns omit units.",
+    "fix": "Add named, focusable table regions, visible focus styling, column scopes and Bcf labels, including every numeric weekly-values header (Actual, Model, Baseline and 80% range).",
+    "paths": [
+      "lab/storage/index.html",
+      "lab/storage/storage.css"
+    ],
+    "verification": "Inspected both HTML table wrappers and headers; static validation passes. No real-browser accessibility certification is claimed. The deployed 13-week history selection showed 13 accessible table rows. The final deployed weekly table also showed Bcf in Actual, Model, Baseline and 80% range headers."
+  },
+  {
+    "id": 28,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "An open forecast page can keep its pre-release status after the scheduled release passes.",
+    "evidence_before": "forecast() and ledgerTable() evaluate Date.now only during initial render; no timer or visibility refresh updates those messages.",
+    "fix": "Extract a testable release-status function and refresh status/ledger each minute and when returning to the tab; clear repeated content first.",
+    "paths": [
+      "lab/storage/app.js",
+      "lab/storage/app.test.cjs"
+    ],
+    "verification": "Boundary test verifies status before and exactly at scheduled release and rejects a forecast issued at the deadline."
+  },
+  {
+    "id": 29,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "Archive loading can hang indefinitely and a failed request gives no retry path.",
+    "evidence_before": "The baseline fetch(state.json) has no timeout or snapshot validation; its catch only provides a CSV link.",
+    "fix": "Add a 15-second abort, validate required snapshot observations, hide incomplete results, and expose a retry button alongside the CSV fallback.",
+    "paths": [
+      "lab/storage/app.js",
+      "lab/storage/storage.css",
+      "lab/storage/app.test.cjs"
+    ],
+    "verification": "Snapshot regression rejects bad dates, null replay observations and null forecast values; inspected abort/finally/retry handling; no network-dependent test."
+  },
+  {
+    "id": 30,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "The model's chronology guard can miss a future training row before the last element.",
+    "evidence_before": "model.predict checks only train[-1][0].week >= row.week, so an out-of-order earlier array position can leak the target/future.",
+    "fix": "Require all selected training weeks to be distinct, sorted and strictly before the target.",
+    "paths": [
+      "lab/storage/model.py",
+      "lab/storage/test_research_guards.py"
+    ],
+    "verification": "Regression places the target at the first training position and confirms rejection; the 463-week replay still matches frozen metrics."
+  },
+  {
+    "id": 31,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "Nonfinite training values and invalid calibration errors can contaminate model fitting or intervals.",
+    "evidence_before": "model.predict passes the feature matrix and response directly to lstsq and sorts previous_errors without checking finiteness or nonnegative absolute errors.",
+    "fix": "Validate selected features, responses, baseline and calibration errors before regression or interval computation.",
+    "paths": [
+      "lab/storage/model.py",
+      "lab/storage/test_research_guards.py"
+    ],
+    "verification": "Regression rejects infinite training outcomes, NaN errors and negative errors; unchanged historical replay passes."
+  },
+  {
+    "id": 32,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "The model can run on CSVs that no longer match their recorded source manifest.",
+    "evidence_before": "refresh.load_shared reads storage.csv/weather.csv directly and never reads the manifest's existing SHA-256 fields.",
+    "fix": "Verify both CSV digests against lab/data/manifest.json before parsing or modeling.",
+    "paths": [
+      "lab/storage/refresh.py",
+      "lab/storage/test_research_guards.py"
+    ],
+    "verification": "A modified CSV with the old manifest is rejected before parsing; checked-in CSVs load and reproduce the recorded scores."
+  },
+  {
+    "id": 33,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "Nonphysical CSV values are accepted as observations.",
+    "evidence_before": "refresh.load_shared converts stock, change, HDD and CDD with float() but does not reject NaN/Infinity, negative storage or negative degree days.",
+    "fix": "Reject nonfinite numbers, negative stock/degree-day values and empty source histories.",
+    "paths": [
+      "lab/storage/refresh.py",
+      "lab/storage/test_research_guards.py"
+    ],
+    "verification": "Matching-hash fixtures with NaN HDD, negative HDD and negative stock are rejected, separating content validation from the digest check."
+  },
+  {
+    "id": 34,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "A malformed EIA bulletin can pass stock-change consistency checks.",
+    "evidence_before": "parse_report only checks abs(now-prev-change)>1; NaN makes that comparison false. Reporting-week and release-date order are not checked.",
+    "fix": "Require finite stock/change values, nonnegative stocks, a Friday reporting week and consistent publication/next-release dates.",
+    "paths": [
+      "lab/storage/refresh.py",
+      "lab/storage/test_research_guards.py"
+    ],
+    "verification": "Regression rejects NaN total stocks and a non-Friday week; a valid synthetic bulletin parses for captured-outcome reconciliation."
+  },
+  {
+    "id": 35,
+    "repo": "henry-hub-storage-forecaster",
+    "issue": "Cached scoring records are trusted without reconciling their forecast week, raw release or publication window.",
+    "evidence_before": "refresh.run loads an existing release JSON and appends a scored row whenever a publication JSON exists; no read-time raw-hash/week/time reconciliation runs.",
+    "fix": "Reconcile captured outcomes with the raw EIA bytes and verify cached publication URL, commit format and pre-release timing before scoring.",
+    "paths": [
+      "lab/storage/refresh.py",
+      "lab/storage/test_research_guards.py"
+    ],
+    "verification": "Regressions cover altered raw hash, wrong forecast week, changed actual, valid captured release, wrong proof URL and publication at the release cutoff."
+  },
+  {
+    "id": 36,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "The weather project has no standalone root web entry and navigation leaves visitors at a placeholder.",
+    "evidence_before": "Baseline has no root index.html; app brand/project links point ../ to a generic lab/index.html linking only the canonical site.",
+    "fix": "Add a historical-snapshot landing page, local project navigation and standalone README demo URL.",
+    "paths": [
+      "index.html",
+      "lab/index.html",
+      "lab/weather/index.html",
+      "README.md"
+    ],
+    "verification": "All local links pass static validation; inspected source dates, accessible skip navigation and responsive landing styles. The deployed landing and weather tool were opened and the desktop comparison layout was visually inspected."
+  },
+  {
+    "id": 37,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Weather attribution points to shared-data and API files absent from the repository.",
+    "evidence_before": "DATA_SOURCES.md includes lab/data/README.md, lab/data/manifest.json and lab/api/v1/index.json, absent from the weather package.",
+    "fix": "Document NOAA GFS, Census populations and us-atlas through the weather project's actual methodology, archive and license files.",
+    "paths": [
+      "DATA_SOURCES.md"
+    ],
+    "verification": "Rewritten relative links pass scripts/validate.py --static-only; NOAA/Census metadata remains unchanged."
+  },
+  {
+    "id": 38,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "The comparison engine accepts archives whose declared units or method disagree with the UI.",
+    "evidence_before": "WeatherEngine.check validates schema/states/runs but ignores base_f, units, model, components, cycle, sample hours and weight. Reversed component order would silently exchange HDD and CDD.",
+    "fix": "Reject method metadata incompatible with the monitor's documented 65\u00b0F, four-sample, Census-weighted GFS calculation.",
+    "paths": [
+      "lab/weather/engine.js",
+      "lab/weather/research/weather.test.js"
+    ],
+    "verification": "Regression rejects changed units/model/components and other method fields; the supplied archive still validates."
+  },
+  {
+    "id": 39,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Weather date validation accepts impossible calendar dates.",
+    "evidence_before": "engine.check uses YYYY-MM-DD regexes only, which accept labels such as February 31.",
+    "fix": "Validate civil dates through an exact ISO round trip for initialization and valid-day labels.",
+    "paths": [
+      "lab/weather/engine.js",
+      "lab/weather/research/weather.test.js"
+    ],
+    "verification": "Regression tests real leap dates and invalid dates, plus an archive with an impossible valid-day label."
+  },
+  {
+    "id": 40,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Malformed or empty run/day structures can pass the archive check.",
+    "evidence_before": "check accepts an empty runs array and run.days={}, relies on states.length without an array check, and accepts arbitrary unique state codes rather than the covered geography.",
+    "fix": "Require nonempty run/day collections, complete numeric two-component state arrays and the exact Lower 48 plus DC state set with valid population weights.",
+    "paths": [
+      "lab/weather/engine.js",
+      "lab/weather/research/weather.test.js"
+    ],
+    "verification": "Regression rejects empty/missing day structures, incomplete vectors and invalid state metadata; supplied 49-area archive remains valid."
+  },
+  {
+    "id": 41,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "The reusable engine computes equal or reversed forecast comparisons.",
+    "evidence_before": "WeatherEngine.calculate finds the two cycles without enforcing earlier<later; only the old page rendering later notices an invalid order.",
+    "fix": "Reject nonchronological input in the engine and prevent the page from calculating or exporting an invalid pair.",
+    "paths": [
+      "lab/weather/engine.js",
+      "lab/weather/app.js",
+      "lab/weather/research/weather.test.js",
+      "lab/weather/research/app.test.js"
+    ],
+    "verification": "Engine tests reject equal/reversed cycles; page regression confirms invalid results are hidden and export is disabled. The deployed browser showed the invalid-pair message for equal initialization times, hid results, and recovered with Latest archived pair."
+  },
+  {
+    "id": 42,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Selecting a state from the results table loses keyboard focus.",
+    "evidence_before": "The state-button handler calls setGeo(), which replaces the table containing that focused button, and only scrolls the heading without focusing anything.",
+    "fix": "Move focus to a programmatically focusable updated results heading and stop replay when geography is selected.",
+    "paths": [
+      "lab/weather/app.js",
+      "lab/weather/index.html",
+      "lab/weather/style.css",
+      "lab/weather/research/app.test.js"
+    ],
+    "verification": "Page regression selects a table state and verifies focus moves to headline; heading has tabindex=-1 and focus styling."
+  },
+  {
+    "id": 43,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "A weather comparison cannot be preserved by refreshing or sharing its URL.",
+    "evidence_before": "Startup always selects the latest adjacent pair; the app neither reads nor writes selected vintages, measure or geography in the URL.",
+    "fix": "Persist choices as validated query parameters, restore valid comparisons and visibly explain unavailable saved selections.",
+    "paths": [
+      "lab/weather/app.js",
+      "lab/weather/engine.js",
+      "lab/weather/index.html",
+      "lab/weather/README.md",
+      "lab/weather/research/weather.test.js",
+      "lab/weather/research/app.test.js"
+    ],
+    "verification": "Engine and page regressions restore a CDD/Pennsylvania comparison and test fallback for unavailable archive selections. In the deployed browser, a Pennsylvania/CDD comparison survived a page reload with the same URL parameters."
+  },
+  {
+    "id": 44,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Different weather-measure exports have indistinguishable filenames.",
+    "evidence_before": "CSV filenames include geography and run dates but omit hdd/cdd/both, even though those exports contain different values.",
+    "fix": "Include the selected measure in the generated CSV filename and document it.",
+    "paths": [
+      "lab/weather/app.js",
+      "lab/weather/engine.js",
+      "lab/weather/README.md",
+      "lab/weather/research/weather.test.js"
+    ],
+    "verification": "Filename regression verifies distinct HDD/CDD/BOTH names for the same geography and vintages."
+  },
+  {
+    "id": 45,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Map colors change meaning between replay frames.",
+    "evidence_before": "drawMap derives its color limit from each selected comparison's maximum absolute state revision, so equal colors can encode very different degree-day changes across frames.",
+    "fix": "Use one symmetric scale per measure across all chronological comparisons in the loaded archive; label the fixed scale and retain a matched-window caveat.",
+    "paths": [
+      "lab/weather/app.js",
+      "lab/weather/engine.js",
+      "lab/weather/README.md",
+      "lab/weather/research/weather.test.js"
+    ],
+    "verification": "Regression enumerates comparisons and verifies the selected fixed scale covers every state's cumulative revision."
+  },
+  {
+    "id": 46,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Replay silently jumps from the newest archive back to the oldest.",
+    "evidence_before": "selectPair uses modulo indexing, so Next and timed playback wrap without announcing the chronological jump.",
+    "fix": "Bound pair navigation, disable endpoint buttons, stop at the newest pair and make restart an explicit labeled action.",
+    "paths": [
+      "lab/weather/app.js",
+      "lab/weather/README.md",
+      "lab/weather/research/app.test.js"
+    ],
+    "verification": "Page regression advances replay to its endpoint, checks that it stops, verifies Next is disabled and tests the final-step boundary."
+  },
+  {
+    "id": 47,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Controls look available while data is loading or after archive loading fails.",
+    "evidence_before": "index.html controls are enabled before event handlers/data exist; load has no timeout and catch does not disable controls or hide potentially partial results.",
+    "fix": "Start controls disabled, enable them only after successful validation, time out stalled loads and keep unavailable controls/results disabled or hidden on error.",
+    "paths": [
+      "lab/weather/app.js",
+      "lab/weather/index.html",
+      "lab/weather/research/app.test.js"
+    ],
+    "verification": "Failed-fetch page regression verifies all nine controls stay disabled, content is hidden and the error is readable."
+  },
+  {
+    "id": 48,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Users without JavaScript see a permanent loading message with no direct explanation or data fallback.",
+    "evidence_before": "Weather index.html contains no noscript element; initialization metadata and all comparisons require JavaScript.",
+    "fix": "Add a no-script explanation with direct archive and methodology links.",
+    "paths": [
+      "lab/weather/index.html"
+    ],
+    "verification": "Inspected noscript markup and validated its local runs.json destination; existing numerical data remains untouched."
+  },
+  {
+    "id": 49,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Merging newly built runs silently replaces an already archived cycle and incompletely checks method compatibility.",
+    "evidence_before": "build_runs.py uses built.update for matching initializations; its merge gate checks only schema, census hash, states, base and sample hours.",
+    "fix": "Require identical duplicate cycles by default, reject changed method/units/weights, and make deliberate replacement an explicit --merge --replace-existing choice.",
+    "paths": [
+      "lab/weather/research/build_runs.py",
+      "lab/weather/research/archive_rules.py",
+      "lab/weather/research/test_archive_rules.py",
+      "lab/weather/README.md"
+    ],
+    "verification": "Standard-library tests cover idempotent duplicate cycles, rejection/explicit replacement of changed cycles and incompatible method fields; no data was rebuilt."
+  },
+  {
+    "id": 50,
+    "repo": "natural-gas-weather-monitor",
+    "issue": "Cached temperatures bypass the physical bounds applied to freshly downloaded samples.",
+    "evidence_before": "Fresh sample() rejects temperatures below -100\u00b0F or above 150\u00b0F, while the cache branch checks only shape and finiteness.",
+    "fix": "Use one shared vector-shape, finite-value and physical-range validator for both fresh and cached temperatures.",
+    "paths": [
+      "lab/weather/research/build_runs.py",
+      "lab/weather/research/archive_rules.py",
+      "lab/weather/research/test_archive_rules.py",
+      "lab/weather/README.md"
+    ],
+    "verification": "Standard-library regression covers boundary values, NaN, out-of-range values, nested vectors, wrong shape and empty samples; no GDAL or network dependency."
+  },
+  {
+    "id": 51,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Attribution links refer to datasets absent from this standalone repository.",
+    "evidence_before": "DATA_SOURCES.md linked lab/data/README.md, lab/data/manifest.json, lab/weather/README.md, lab/weather/research/US_ATLAS_LICENSE and lab/api/v1/index.json; none were shipped in this project.",
+    "fix": "Replaced the copied portfolio-wide attribution with the two actual curve sources, exact frozen coverage, original EIA references and the local SEC source map.",
+    "paths": [
+      "DATA_SOURCES.md"
+    ],
+    "verification": "python scripts/validate.py --static-only: all 24 local links pass; scoped source counts agree with market.js."
+  },
+  {
+    "id": 52,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Project navigation and its downloaded guide direct readers to the old installation or nonexistent files.",
+    "evidence_before": "README and research example URLs opened the canonical site; lab/index.html linked only the canonical portfolio and a README. The embedded downloaded guide instructed users to open Open_Explorer.html, which was not included.",
+    "fix": "Pointed the primary demo and example to this project, made the research note and lab guide navigate locally, and replaced the stale embedded download with the maintained README.",
+    "paths": [
+      "README.md",
+      "lab/index.html",
+      "lab/research/curve-repricing.md",
+      "app.js"
+    ],
+    "verification": "Local-link validation passes; guide now downloads the actual README.md, with working root-server instructions."
+  },
+  {
+    "id": 53,
+    "repo": "henry-hub-futures-curve",
+    "issue": "The standalone app does not clearly disclose its frozen-data status where users choose comparisons.",
+    "evidence_before": "The hero said Compare Henry Hub settlements without stating that this standalone edition has no live feed or refresh. Coverage dates appeared only in the footer, and the seasonal control called every date a Settlement date despite SEC reconstruction.",
+    "fix": "Added a prominent dataset-specific historical-snapshot label with its latest observation date, changed the generic wording to historical prices and Observation date, and documented the distinct archive cutoffs and delayed filing publication. A live screenshot exposed insufficient contrast in the added snapshot label; its inline foreground was changed from #315a55 to #d2e8df against the #102e30 hero, preserving layout.",
+    "paths": [
+      "index.html",
+      "app.js",
+      "README.md"
+    ],
+    "verification": "Controller regressions initialize both source types; frozen-data tests verify 7,012 EIA dates and the unchanged SEC snapshot; static docs and dynamic banner use the stored data dates. The foreground/background contrast calculated from sRGB relative luminance is 11.23:1 (previously 1.87:1). The full local validator and all 12 curve regressions pass after this CSS-only correction. This color-pair calculation does not certify whole-page accessibility; the final live screenshot is reviewed separately. The final deployed page was reloaded and its corrected historical-snapshot notice was visually confirmed in a desktop screenshot."
+  },
+  {
+    "id": 54,
+    "repo": "henry-hub-futures-curve",
+    "issue": "A link specifying only the March\u2013April view opens the wrong default dataset.",
+    "evidence_before": "restoreURL started with active=strips, read view=spread, then assigned preferredDataset[view]=active without consulting the spread default. Thus ?view=spread silently used quarterly strips instead of the intended daily archive.",
+    "fix": "Resolve the requested view first, then choose an explicit valid dataset or that view's declared default.",
+    "paths": [
+      "app.js",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "Node DOM regression checks ?view=spread \u2192 archive, explicit data=strips \u2192 strips, and invalid data with winter view \u2192 strips. The deployed ?view=spread URL selected the EIA daily archive and March\u2013April view."
+  },
+  {
+    "id": 55,
+    "repo": "henry-hub-futures-curve",
+    "issue": "An older failed import can replace the success message from a newer import.",
+    "evidence_before": "The asynchronous CSV success path checked its request sequence after file.text(), but the catch path always replaced import feedback. A deferred rejection from an earlier file could overwrite a later successful import.",
+    "fix": "Guard import errors with the same request-sequence check used by successful reads.",
+    "paths": [
+      "app.js",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "Regression starts an old pending read, imports a newer valid file, rejects the old read, and verifies the success message and imported dataset remain intact."
+  },
+  {
+    "id": 56,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Finite but extreme CSV prices can overflow spreads and chart arithmetic.",
+    "evidence_before": "validateRow accepted any Number.isFinite price; values such as +1e308 and -1e308 pass that check but produce infinite differences and sums.",
+    "fix": "Define and explain a supported \u00b11,000,000,000 USD/MMBtu numeric range, validating both parsed and directly indexed observations before calculation.",
+    "paths": [
+      "engine.js",
+      "README.md",
+      "tests/engine.test.cjs"
+    ],
+    "verification": "Tests reject \u00b11e308 through both CSV and index entry points, retain negative prices, and calculate a finite spread at the supported boundaries; all original snapshot prices remain accepted."
+  },
+  {
+    "id": 57,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Accepted four-digit years below 1000 break the seasonal view.",
+    "evidence_before": "winterView passed s.wy+\"-11\" to monthIndex. For an accepted 0001 CSV year, this becomes \"1-11\"; fixed-position slicing then produces NaN labels although the underlying date validator permits 0001.",
+    "fix": "Create seasonal delivery labels through a validated helper that pads the year to four digits and rolls November\u2013October correctly.",
+    "paths": [
+      "engine.js",
+      "app.js",
+      "tests/engine.test.cjs",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "An actual year-0001 import now renders all 12 seasonal rows, with winter 4.000, summer 3.000 and premium 1; invalid season bounds are rejected."
+  },
+  {
+    "id": 58,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Expanding table rows removes the keyboard-focused pagination button.",
+    "evidence_before": "table.append called more.remove() on every expansion and did not transfer focus; the final expansion permanently removed the active button.",
+    "fix": "Keep the pagination node while more rows exist and move focus to the first newly revealed row, including on the final page.",
+    "paths": [
+      "app.js",
+      "index.html",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "DOM regression expands every page and confirms focus lands on the first new row each time, including the last page. In the deployed browser, expanding 12 rows to 62 focused the first newly revealed row."
+  },
+  {
+    "id": 59,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Resizing the chart discards keyboard focus and the selected observation.",
+    "evidence_before": "paint replaced the host SVG and reinitialized selected=-1; ResizeObserver redrew it without remembering whether the chart had focus.",
+    "fix": "Persist the selected index in chart state and restore SVG focus without scrolling after a resize; reset selection only for a new chart configuration.",
+    "paths": [
+      "plot.js",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "Regression focuses the chart, advances a point, triggers ResizeObserver, and verifies both the focused SVG and spoken selected point survive."
+  },
+  {
+    "id": 60,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Point-by-point chart announcements rely on axis context announced when entering the chart.",
+    "evidence_before": "The original SVG accessible label already included the x-axis context and y-axis units. Subsequent live-region messages from inspect included the point label, series name and numeric price without repeating that context.",
+    "fix": "Repeat the x-axis meaning and y-axis units in each concise point-by-point live announcement. This is a usability improvement; the original chart already provided axis context.",
+    "paths": [
+      "plot.js",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "Keyboard chart regression verifies the announcement includes Delivery month and USD / MMBtu; the same code uses calendar-day context in spread view. In the deployed spread chart, an ArrowRight interaction announced the calendar-day position, USD/MMBtu units and both series values."
+  },
+  {
+    "id": 61,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Curve data tables have no caption or semantic row headers.",
+    "evidence_before": "table created only column headers and rendered every body cell as td. The section heading did not give the table its own caption or associate each numeric row with its delivery identifier.",
+    "fix": "Add a table caption naming the comparison and USD/MMBtu units, and render the first cell of every body row as a scoped row header.",
+    "paths": [
+      "app.js",
+      "index.html",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "DOM table regression confirms a units caption and scope=row headers, including dynamically appended rows; local checks pass."
+  },
+  {
+    "id": 62,
+    "repo": "henry-hub-futures-curve",
+    "issue": "The explorer starts with an enabled export and offers no JavaScript-disabled fallback.",
+    "evidence_before": "The initial HTML enabled Export CSV while results were empty, omitted noscript guidance, and its initialization error referred to a standalone project download that was not provided in this repo.",
+    "fix": "Disable export until results exist, show an initial loading status, provide direct project/research links without JavaScript, and make failures link to the actual setup guide.",
+    "paths": [
+      "index.html",
+      "app.js"
+    ],
+    "verification": "Static inspection confirms noscript links and disabled initial export; successful controller tests enable export only after table results are populated; link validation passes."
+  },
+  {
+    "id": 63,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Downloaded comparisons lose the provenance that explains their prices.",
+    "evidence_before": "CSV columns held comparison dates and numeric results only; the selected SEC filing URLs, EIA source, reconstruction distinction and frozen source commit were absent.",
+    "fix": "Append dataset, price origin, applicable original source URLs and the source snapshot commit to every exported row. Imported filenames are prefixed as descriptive text rather than emitted as a formula-like cell.",
+    "paths": [
+      "app.js",
+      "README.md",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "CSV regression downloads the June\u2013September SEC comparison and verifies both filing URLs, the four provenance columns and commit 80c2e5321dadc95aadd4c7f65792fb15f0e2f156."
+  },
+  {
+    "id": 64,
+    "repo": "henry-hub-futures-curve",
+    "issue": "The Latest week preset claims a calendar period it does not implement.",
+    "evidence_before": "The preset used dates.at(-6) through dates.at(-1). The actual final selected dates run 2024-03-28\u20132024-04-05, an eight-day span in a historical archive, not the latest calendar week.",
+    "fix": "Rename the preset Last 6 archived observations to state the selection rule and historical context directly.",
+    "paths": [
+      "app.js"
+    ],
+    "verification": "Checked the six stored dates: 2024-03-28 and 2024-04-01 through 2024-04-05; the comparison endpoints remain unchanged."
+  },
+  {
+    "id": 65,
+    "repo": "henry-hub-futures-curve",
+    "issue": "Unavailable observation dates are not programmatically linked to their error.",
+    "evidence_before": "selectionOK displayed nearest-date suggestions in input-hint but did not mark the affected date control invalid or link it to that explanation.",
+    "fix": "Set aria-invalid on the affected control, associate the hint through aria-describedby, and clear invalid state when corrected.",
+    "paths": [
+      "app.js",
+      "tests/ui.test.cjs"
+    ],
+    "verification": "Regression selects unavailable 2024-04-06, verifies the linked error, then corrects to 2024-04-05 and checks the invalid state clears."
+  },
+  {
+    "id": 66,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "The standalone site has no root entry page and its navigation leads to a generic stub.",
+    "evidence_before": "The shipped files had no root index.html. The simulator header/footer pointed to lab/index.html, which only sent readers to the separate canonical portfolio and a README.",
+    "fix": "Create a responsive root landing page with a direct local simulator link, model assumptions and source audit; make the app and lab guide navigate within this project.",
+    "paths": [
+      "index.html",
+      "lab/index.html",
+      "lab/industrial/index.html",
+      "lab/industrial/style.css",
+      "README.md"
+    ],
+    "verification": "Static validation passes all 38 local links, including the root app entry, method anchor and audit download."
+  },
+  {
+    "id": 67,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "The simulator's source document links to nonexistent and irrelevant portfolio files.",
+    "evidence_before": "DATA_SOURCES.md listed NOAA, Census and us-atlas plus missing lab/data, lab/weather and lab/api paths, while omitting a useful local explanation of its own market asset and forward audit.",
+    "fix": "Scope the document to EIA monthly cash, SEC fund positions and illustrative/user inputs; link the actual market, reconstruction and audit files.",
+    "paths": [
+      "DATA_SOURCES.md"
+    ],
+    "verification": "Local-link validation passes; source counts match 358 cash months, 13 curves and the 156-row forward audit."
+  },
+  {
+    "id": 68,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "The simulator's frozen data can be mistaken for a maintained current price feed.",
+    "evidence_before": "The opening section identified industrial procurement but did not say the standalone edition was frozen. Release and coverage information appeared only at the bottom, and the README primary link opened the canonical application.",
+    "fix": "Display historical snapshot status at entry and above controls, derive cash coverage/release from the bundled asset, and document this project's no-refresh status and separate original site.",
+    "paths": [
+      "index.html",
+      "lab/industrial/index.html",
+      "lab/industrial/app.js",
+      "README.md"
+    ],
+    "verification": "Initialized controller uses the stored October 2026 coverage and 18 November 2026 release; snapshot checksum test confirms the market asset is unchanged."
+  },
+  {
+    "id": 69,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Sparse five-element arrays pass the model's validation and return false zero budgets.",
+    "evidence_before": "Array.every skips holes. On the published model, quantities=new Array(5) returned five sparse rows and quantity, variable, mixed, difference and local all equal to zero.",
+    "fix": "Validate a dense Array.from copy so missing positions are seen as invalid values for quantities, spot prices and forwards.",
+    "paths": [
+      "lab/industrial/model.js",
+      "lab/industrial/model.test.cjs"
+    ],
+    "verification": "Regression rejects wholly sparse and partially sparse arrays in all three monthly inputs; ordinary five-month fixtures still pass."
+  },
+  {
+    "id": 70,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "The public calculation model returns Infinity or unusable chart ranges for finite inputs.",
+    "evidence_before": "The model checked input finiteness only. The original model returned mixed=Infinity for five finite 1e308 quantities; its aggregate UI guard did not validate every returned component or a positive-to-negative shared chart range.",
+    "fix": "Validate every computed row component, all returned totals and the shared monthly cost range before returning results.",
+    "paths": [
+      "lab/industrial/model.js",
+      "lab/industrial/model.test.cjs"
+    ],
+    "verification": "Tests cover row multiplication overflow, total overflow and an infinite cross-zero chart range; all reject with an actionable calculation-range error."
+  },
+  {
+    "id": 71,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Subtracting large total costs can erase a real fixed-price effect.",
+    "evidence_before": "The model used difference=mixed-variable after adding common local costs. With five units, cash 2, fixed 3, share 0.5 and basis 1e18, the published code returned difference=0 instead of 2.5.",
+    "fix": "Compute the effect directly as fixedVolume \u00d7 (fixedPrice \u2212 spotPrice), avoiding cancellation of shared charges; document display precision and this calculation.",
+    "paths": [
+      "lab/industrial/model.js",
+      "lab/industrial/model.test.cjs",
+      "lab/industrial/index.html",
+      "README.md"
+    ],
+    "verification": "Regression reproduces large equal displayed totals while retaining the correct 0.5 monthly and 2.5 seasonal effect; existing normal-budget arithmetic remains correct."
+  },
+  {
+    "id": 72,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "The model concatenates numeric-string winter years into invalid next-year labels.",
+    "evidence_before": "months(\"2025\") returned 2025-11,2025-12,20251-01,20251-02,20251-03 because year+1 concatenated a string. Early years were not padded and out-of-range years were not rejected.",
+    "fix": "Normalize and validate an integer year from 1 through 9998, pad four-digit ISO labels, and exclude impossible start years when finding available winters.",
+    "paths": [
+      "lab/industrial/model.js",
+      "lab/industrial/model.test.cjs"
+    ],
+    "verification": "Tests cover numeric strings, year 0001, invalid fractions/empty values, and both boundaries; all original complete winter seasons remain available."
+  },
+  {
+    "id": 73,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Changing the winter silently replaces a manually chosen fixed quote.",
+    "evidence_before": "configureSeason always assigned curves[0] || manual after rebuilding options, so a user's manual scenario switched to an archived curve whenever the new winter had one.",
+    "fix": "Keep a manual selection and preserve an archived date when still eligible; only the explicit Reset action restores the default newest curve.",
+    "paths": [
+      "lab/industrial/app.js",
+      "lab/industrial/ui.test.cjs"
+    ],
+    "verification": "DOM regression keeps a 4.25 manual quote across a winter change, then verifies Reset restores the 2025-09-30 default curve. The deployed browser preserved an entered 4.12 quote across a change from winter 2025\u20132026 to 2024\u20132025, and Reset restored the default scenario."
+  },
+  {
+    "id": 74,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "A 0% fixed scenario is blocked by a price that is not used in its calculation.",
+    "evidence_before": "assumptions validated the manual fixed-price field before reading share; a blank manual quote hid results even when fixed share was zero.",
+    "fix": "Read the share first, skip and disable an unused manual price at zero fixed volume, show Not applied in the fixed-price column and label the CSV accordingly.",
+    "paths": [
+      "lab/industrial/app.js",
+      "lab/industrial/ui.test.cjs",
+      "README.md"
+    ],
+    "verification": "Regression blanks the manual quote, switches to 0%, and verifies equal budgets, enabled output and an export explicitly marked Not applied (0% fixed). The deployed browser accepted an empty manual quote at 0% fixed, disabled the unused field, and displayed identical budgets with a $0.00 effect."
+  },
+  {
+    "id": 75,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Whole-dollar display contradicts sub-dollar savings or cost classifications.",
+    "evidence_before": "The currency formatter used maximumFractionDigits:0 while deltaSub classified differences as small as 0.005. A 0.20 effect could therefore display $0 and Higher seasonal cost.",
+    "fix": "Display monetary results to cents, label nonzero sub-cent differences explicitly, and align the positive-cost styling threshold with cent rounding.",
+    "paths": [
+      "lab/industrial/app.js",
+      "lab/industrial/index.html",
+      "lab/industrial/ui.test.cjs"
+    ],
+    "verification": "Regression verifies a 0.20 effect displays $0.20 with Higher seasonal cost and a 0.001 effect is labelled Difference below $0.01."
+  },
+  {
+    "id": 76,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Invalid assumption fields are not associated with the error shown below the form.",
+    "evidence_before": "inputValue only threw a global message; no input received aria-invalid or aria-describedby, so assistive technology could not identify the affected field from the input.",
+    "fix": "Mark the failing input invalid and associate the error, preserving any existing price explanation; clear only the error association once corrected.",
+    "paths": [
+      "lab/industrial/app.js",
+      "lab/industrial/ui.test.cjs",
+      "lab/industrial/style.css"
+    ],
+    "verification": "Regression verifies invalid consumption is linked to the error, correction restores output, and the manual price retains its price-note description through invalid and valid states. The deployed browser exposed the missing-quote alert and the input description pointed to both price-note and error; switching to 0% fixed recovered valid output."
+  },
+  {
+    "id": 77,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Recalculated results are explicitly silent to screen readers.",
+    "evidence_before": "The output container had aria-live=off and there was no separate live result summary, despite recomputing on every input event.",
+    "fix": "Add a concise polite atomic status message with the two budgets and effect, debounced until edits settle; clear it on invalid input.",
+    "paths": [
+      "lab/industrial/index.html",
+      "lab/industrial/app.js",
+      "lab/industrial/ui.test.cjs"
+    ],
+    "verification": "Regression changes the share repeatedly, confirms only the latest announcement remains scheduled, and verifies the concise budget message after it runs. The deployed browser exposed the updated equal-budget status after the 0% scenario settled."
+  },
+  {
+    "id": 78,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Monthly consumption controls omit units from their accessible names.",
+    "evidence_before": "Dynamic quantity labels contained only month text. MMBtu appeared in a separate section heading, leaving a focused quantity input without a unit in its name; output row identifiers were plain data cells.",
+    "fix": "Label each monthly input with month, consumption and MMBtu; reinforce the same unit relationships with a descriptive table caption and scoped month row headers.",
+    "paths": [
+      "lab/industrial/app.js",
+      "lab/industrial/index.html",
+      "lab/industrial/style.css",
+      "lab/industrial/ui.test.cjs"
+    ],
+    "verification": "DOM regression checks Jan 26 consumption in MMBtu and scoped row identifiers; the table caption defines volume, price and budget units."
+  },
+  {
+    "id": 79,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Failed or disabled JavaScript leaves empty controls and apparently available output.",
+    "evidence_before": "The original HTML showed dashed results and enabled Download CSV before initialization, had no noscript guidance, and app initialization outside a catch failed silently if its market asset was missing.",
+    "fix": "Hide output and disable download until calculation succeeds, provide a loading status and JavaScript-disabled guide, and catch initialization failures with a direct setup link.",
+    "paths": [
+      "lab/industrial/index.html",
+      "lab/industrial/app.js",
+      "lab/industrial/ui.test.cjs"
+    ],
+    "verification": "Regression omits the market asset and verifies an actionable load error, hidden output and disabled export; static fallback links pass validation."
+  },
+  {
+    "id": 80,
+    "repo": "industrial-gas-cost-simulator",
+    "issue": "Forward-audit reconstruction silently overwrites duplicate observations and can misattribute a curve.",
+    "evidence_before": "get_curves assigned rec[prices][delivery_month] without checking whether that date/month was already read, and retained the first source URL even if later rows for the same date cited another filing.",
+    "fix": "Reject duplicate date/month keys and conflicting source URLs before building the market asset; accept an optional local audit path for deterministic fixture tests.",
+    "paths": [
+      "lab/industrial/refresh.py",
+      "lab/industrial/test_refresh.py",
+      "README.md"
+    ],
+    "verification": "Three Python tests reject duplicates, reject conflicting sources, and rebuild all 156 original forward prices and source URLs exactly equal to the frozen market asset; no data were refreshed."
+  },
+  {
+    "id": 81,
+    "repo": "natural-gas-data-api",
+    "issue": "The standalone project has no root page and its lab navigation sends visitors to the original portfolio.",
+    "evidence_before": "No index.html existed at repository root; lab/index.html offered only an external canonical-portfolio link, while README's primary demo URL also pointed there.",
+    "fix": "Added a local project landing with explorer, status, notebook and direct JSON entry points; pointed the primary demo and internal navigation at this standalone repository.",
+    "paths": [
+      "index.html",
+      "README.md",
+      "lab/index.html",
+      "lab/README.md",
+      "lab/api/index.html",
+      "lab/api/status.html"
+    ],
+    "verification": "Shared static validator passes. The deployed project landing, explorer and status page were opened in the cloud browser; local navigation and populated responses were observed."
+  },
+  {
+    "id": 82,
+    "repo": "natural-gas-data-api",
+    "issue": "Data attribution names absent projects and contains broken license/methodology links.",
+    "evidence_before": "DATA_SOURCES.md linked lab/weather/README.md and lab/weather/research/US_ATLAS_LICENSE, neither of which is present, and listed SEC/GFS/geographic assets that the API does not bundle.",
+    "fix": "Replaced the copied portfolio-wide table with attribution for the actual EIA/NOAA observation series, existing local manifest/catalog links, and the spot provider's reuse qualification.",
+    "paths": [
+      "DATA_SOURCES.md"
+    ],
+    "verification": "Shared validator passes all local links; attribution scope reconciled with the three source CSVs and manifest."
+  },
+  {
+    "id": 83,
+    "repo": "natural-gas-data-api",
+    "issue": "CSV parsing silently accepts duplicate headers and malformed row widths.",
+    "evidence_before": "read_csv only checked that required headers were a subset; DictReader can overwrite a duplicate column and put surplus cells under None, while missing optional cells became null.",
+    "fix": "Require exactly the unique expected headers and reject both missing and surplus cells before type conversion.",
+    "paths": [
+      "lab/api/build_api.py",
+      "lab/api/test_api.py"
+    ],
+    "verification": "New regression test rejects duplicate change_bcf headers, a truncated row, and an extra cell. The complete Python suite passes (12 tests)."
+  },
+  {
+    "id": 84,
+    "repo": "natural-gas-data-api",
+    "issue": "The API builder accepts impossible inventory levels and storage changes that contradict the supplied stocks.",
+    "evidence_before": "read_csv checked weather ranges but never checked working_gas_bcf or reconciled change_bcf with the prior Friday.",
+    "fix": "Reject negative inventories, reconcile changes for consecutive Fridays, and require null when the preceding Friday is absent; preserve a measured zero.",
+    "paths": [
+      "lab/api/build_api.py",
+      "lab/api/test_api.py"
+    ],
+    "verification": "Regression cases reject negative inventory, a reversed-sign change and a change across a gap; valid zero and null cases pass. All frozen observation JSON reproduces byte-for-byte in a temporary build."
+  },
+  {
+    "id": 85,
+    "repo": "natural-gas-data-api",
+    "issue": "Loose date and timestamp handling can turn malformed provenance into apparently valid published metadata.",
+    "evidence_before": "date.fromisoformat accepted noncanonical ISO forms and normalized them; downloaded_at_utc was accepted whenever nonempty, and generated_at_utc was not parsed.",
+    "fix": "Require YYYY-MM-DD dates and full UTC timestamps; reject impossible calendar values and source retrieval timestamps later than their manifest generation time.",
+    "paths": [
+      "lab/api/build_api.py",
+      "lab/api/test_api.py",
+      "lab/api/response.js"
+    ],
+    "verification": "Tests reject compact/week dates, whitespace dates, impossible dates, offset/naive timestamps and arbitrary text; leap-day input passes. Catalog browser validation rejects invalid clocks."
+  },
+  {
+    "id": 86,
+    "repo": "natural-gas-data-api",
+    "issue": "A failed or shortened rebuild can publish a mixed snapshot and leave obsolete annual endpoints.",
+    "evidence_before": "The original build wrote directly into the target one file at a time and never removed years absent from the new catalog. Root review also identified that unrestricted complete-directory replacement would endanger an unrelated existing --target.",
+    "fix": "Stage the whole managed directory, serialize builder runs with a lock, promote only a complete snapshot, restore the previous target on promotion failure, and remove obsolete partitions. Before staging and immediately before replacement, require an existing target to have a recognizable v1 API catalog and only valid managed endpoint/year files; reject unrelated files, catalogs, directories and symlinks. Document the two-rename deployment limit.",
+    "paths": [
+      "lab/api/build_api.py",
+      "lab/api/test_api.py",
+      "lab/api/README.md",
+      "README.md"
+    ],
+    "verification": "Regression cases preserve a sibling application, extra user notes, an unrelated v1 catalog and a non-API year JSON byte-for-byte, with no leftover staging/lock directories. Valid obsolete-year cleanup still passes. Simulated second-write and promotion failures retain the old edition; a concurrent lock prevents mutation. All 12 API Python tests pass."
+  },
+  {
+    "id": 87,
+    "repo": "natural-gas-data-api",
+    "issue": "The preview and CSV export trust JSON arrays without checking their row schema, null semantics or endpoint shape.",
+    "evidence_before": "loadSelection validated only a non-array object's key, then passed every array through; malformed numbers could reach toFixed and missing fields could be exported as empty values. A one-row array was also described as a latest object.",
+    "fix": "Added a shared browser contract that validates catalog/row shapes, dates, numeric values, nulls, price counts and stock differences before enabling export; derive singleton wording from the selected endpoint.",
+    "paths": [
+      "lab/api/response.js",
+      "lab/api/api.js",
+      "lab/api/test_response.cjs",
+      "lab/api/index.html",
+      "lab/api/status.html"
+    ],
+    "verification": "Four Node tests pass: all published endpoints conform; malformed rows and incorrect array/object shapes fail; valid null and zero values remain distinct."
+  },
+  {
+    "id": 88,
+    "repo": "natural-gas-data-api",
+    "issue": "The spot mean definition incorrectly treats observation dates as publication dates.",
+    "evidence_before": "FIELD_NOTES and v1/index.json said quotes were 'published within the seven-day window', although join_weekly selects spot rows by their observation date.",
+    "fix": "Corrected the builder and catalog definition to observation-date inclusion and explicitly stated that these dates are not publication timestamps.",
+    "paths": [
+      "lab/api/build_api.py",
+      "lab/api/v1/index.json",
+      "DATA_SOURCES.md",
+      "lab/api/README.md"
+    ],
+    "verification": "Existing boundary-date join test passes; metadata-only diff reviewed. No observation JSON or CSV values changed."
+  },
+  {
+    "id": 89,
+    "repo": "natural-gas-data-api",
+    "issue": "The status interface can imply freshness without explaining its frozen edition or showing saved retrieval status, and hides the snapshot stamp on mobile.",
+    "evidence_before": "Source cards omitted the manifest's status and elapsed retrieval age; the legacy built_at_utc key was not explained; the responsive .heroaside rule hid the status timestamp.",
+    "fix": "Show a frozen-edition notice, saved pipeline status and elapsed retrieval age with clock/provider-availability qualifications; document the legacy timestamp's source-manifest meaning and retain the stamp at narrow widths.",
+    "paths": [
+      "lab/api/api.js",
+      "lab/api/response.js",
+      "lab/api/status.html",
+      "lab/api/index.html",
+      "lab/api/style.css",
+      "lab/api/README.md"
+    ],
+    "verification": "Node tests check elapsed age and future-clock handling. HTML/CSS preserves the status stamp at narrow widths. The deployed desktop status page was visually inspected and showed the frozen-edition stamp, saved pipeline status, source coverage and retrieval age. Narrow-screen behavior was reviewed in CSS, not certified across devices."
+  },
+  {
+    "id": 90,
+    "repo": "natural-gas-data-api",
+    "issue": "Catalog failure leaves active controls and indefinite loading messages, and requests have no timeout.",
+    "evidence_before": "Dataset/copy controls started enabled before handlers/catalog were ready; main().catch only displayed an error; fetch could remain pending indefinitely.",
+    "fix": "Disable catalog-dependent controls until validation completes, add 25-second request deadlines, clear loading/busy states on failure, retain direct JSON links, and provide a no-JavaScript fallback.",
+    "paths": [
+      "lab/api/api.js",
+      "lab/api/index.html",
+      "lab/api/status.html",
+      "lab/api/style.css"
+    ],
+    "verification": "JavaScript syntax and contract tests pass; error paths were inspected for disabled controls and resolved loading/busy states. In the deployed browser, controls were disabled during initial loading and enabled after the valid catalog loaded. Live network failures were not deliberately injected."
+  },
+  {
+    "id": 91,
+    "repo": "natural-gas-data-api",
+    "issue": "The notebook and stock-change descriptions equate reported inventory differences with physical injections and withdrawals.",
+    "evidence_before": "Notebook cell 4 stated 'A positive net storage change is an injection. A negative change is a withdrawal'; the catalog similarly used injection/withdrawal labels despite possible reclassifications.",
+    "fix": "Use stock increase/decrease terminology and explain the physical-flow distinction; point the notebook at this edition, print its snapshot timestamp, and clear old saved output that could otherwise appear to represent the selected mirror.",
+    "paths": [
+      "lab/api/natural_gas_api.ipynb",
+      "lab/api/build_api.py",
+      "lab/api/v1/index.json",
+      "lab/api/README.md"
+    ],
+    "verification": "Notebook remains valid JSON with cleared execution counts/outputs; notebook code cells compile; observation inputs unchanged and the API regression suites pass."
+  },
+  {
+    "id": 92,
+    "repo": "natural-gas-data-api",
+    "issue": "The response table lacks a caption and row headers, and its missing-value dash is unexplained to assistive technology.",
+    "evidence_before": "The original table had only column headers, td cells for dates, no caption and a bare em dash for null values; focus styling excluded the scrollable table and code area.",
+    "fix": "Add a dynamic caption, scoped date row headers, explicit unavailable labels and a visible null/zero/CSV explanation; provide consistent focus outlines and a status-page skip link.",
+    "paths": [
+      "lab/api/api.js",
+      "lab/api/index.html",
+      "lab/api/status.html",
+      "lab/api/style.css"
+    ],
+    "verification": "Static markup and DOM construction were inspected for caption, scope, unavailable labels and focus/skip affordances. The deployed browser exposed captioned tables and date row headers; Latest week rendered one JSON object and weather rendered an array with an observed zero preserved. This is representative browser inspection, not a screen-reader certification."
+  },
+  {
+    "id": 93,
+    "repo": "natural-gas-research-notes",
+    "issue": "The extracted notes have no local reading interface and their primary link sends readers to a different website.",
+    "evidence_before": "No root index.html or publication HTML existed. README linked the canonical research directory; lab/index.html only redirected attention to that external portfolio.",
+    "fix": "Added a publication landing and complete static storage, curve and reproduction reading pages, with accessible table regions, section navigation, source links and responsive styles. Markdown remains the source via a deterministic stdlib renderer.",
+    "paths": [
+      "index.html",
+      "lab/research/storage-weather.html",
+      "lab/research/curve-repricing.html",
+      "lab/research/reproduce.html",
+      "lab/research/render_notes.py",
+      "lab/assets/research.css",
+      "README.md",
+      "lab/README.md",
+      "lab/index.html"
+    ],
+    "verification": "render_notes.py --check confirms all four pages are current; shared validator passes HTML/local links. The deployed landing, storage article, curve article and reproduction guide were opened in the cloud browser. The storage reading layout was visually inspected, and both evidence tables and section navigation appeared in the accessibility tree. Pages contain no runtime JavaScript."
+  },
+  {
+    "id": 94,
+    "repo": "natural-gas-research-notes",
+    "issue": "The notes' source policy points to nonexistent local manifests, APIs, weather methods and licenses.",
+    "evidence_before": "DATA_SOURCES.md linked lab/data/manifest.json, lab/api/v1/index.json and lab/weather paths that are absent from the eight-file notes package.",
+    "fix": "Replaced copied attribution with note-specific EIA/NOAA/SEC provenance, working local definitions, and exact frozen canonical evidence links; clarified which broader portfolio assets are outside this package.",
+    "paths": [
+      "DATA_SOURCES.md"
+    ],
+    "verification": "All local links pass the shared validator; frozen links use the existing evidence revision cited by the original notes."
+  },
+  {
+    "id": 95,
+    "repo": "natural-gas-research-notes",
+    "issue": "The source documentation instructs readers to run pipelines and tests that this repository does not contain.",
+    "evidence_before": "lab/data/README.md opened with python data/refresh.py and unittest commands and referred to three local CSVs and a manifest, although none is bundled here.",
+    "fix": "Explain the notes package's actual contents, link the frozen canonical data/manifest/model, route readers to the evidence guide, and narrow the unsupported claim that all upstream schema or network errors are caught.",
+    "paths": [
+      "lab/data/README.md",
+      "lab/README.md"
+    ],
+    "verification": "Every new local target exists; documentation distinguishes reference methods from executable local instructions."
+  },
+  {
+    "id": 96,
+    "repo": "natural-gas-research-notes",
+    "issue": "The quoted findings have no direct, frozen, read-only reproduction procedure in the standalone repository.",
+    "evidence_before": "The storage note's rebuild link led to generic lab navigation and complete-lab instructions, not a procedure to verify the 463-week table or fixed-contract arithmetic without refreshing data.",
+    "fix": "Added a pinned-checkout guide and a stdlib evidence checker for all annual/pooled replay statistics and nine curve pairs. It only reads supplied evidence and explicitly distinguishes arithmetic checks from model refits or prospective validation.",
+    "paths": [
+      "lab/research/REPRODUCE.md",
+      "lab/research/check_evidence.py",
+      "lab/research/storage-weather.md",
+      "README.md"
+    ],
+    "verification": "All 10 storage table rows match the unchanged replay CSV exactly at published precision; all nine curve price pairs/differences match the frozen original package. No data refresh or model fitting performed."
+  },
+  {
+    "id": 97,
+    "repo": "natural-gas-research-notes",
+    "issue": "Headline results and the README chart can be read before the essential retrospective qualification.",
+    "evidence_before": "The storage note led with 32.8% improvement and the chart/table; its nowcast/current-vintage/no-live-score qualification appeared later. README displayed the results image without that nearby qualification.",
+    "fix": "Put evidence status before the result, add the observed-weather/current-vintage/no-completed-live-score qualification beside the README and landing summary, preserve the partial-2026 limitation, and use descriptive chart alternative text.",
+    "paths": [
+      "README.md",
+      "lab/research/storage-weather.md",
+      "lab/research/render_notes.py",
+      "index.html",
+      "lab/research/storage-weather.html"
+    ],
+    "verification": "Reviewed first-screen text ordering; all original reported result values remain unchanged and the evidence arithmetic check passes."
+  },
+  {
+    "id": 98,
+    "repo": "natural-gas-research-notes",
+    "issue": "Interval coverage is reported without stating its nominal target or how the interval radius is selected.",
+    "evidence_before": "The storage table said only 'Interval coverage'; the method listed 52\u2013104 calibration errors without giving the 80% target or rank rule implemented in model.py.",
+    "fix": "Label nominal 80% coverage, document the exact finite-sample rank and inclusive bounds, state the 1.8 percentage-point gap, and distinguish coverage from confidence in the MAE reduction or a guaranteed future rate.",
+    "paths": [
+      "lab/research/storage-weather.md",
+      "lab/research/storage-weather.html"
+    ],
+    "verification": "Rank rule checked against the model's ceil(0.8*(n+1)) selection; the unchanged replay verifies 78.2% inclusive aggregate coverage."
+  },
+  {
+    "id": 99,
+    "repo": "natural-gas-research-notes",
+    "issue": "The curve note asserts unequal repricing across overlapping months but shows only one contract and no direct filing pointers.",
+    "evidence_before": "The original note gave only January 2027's 4.391-to-3.752 example, then asserted the other overlapping months did not all change equally; evidence linked a large application file.",
+    "fix": "Expose all nine matched delivery months, both stored prices, September-minus-June differences and the app's exact SEC filing pointers; clarify exclusion of unmatched contracts and snapshot dates versus publication timing.",
+    "paths": [
+      "lab/research/curve-repricing.md",
+      "lab/research/curve-repricing.html",
+      "lab/research/check_evidence.py"
+    ],
+    "verification": "Decimal arithmetic check confirms all nine pairs and differences against the unmodified original source package; table explicitly says it reproduces stored app values rather than independently re-extracting filings."
+  },
+  {
+    "id": 100,
+    "repo": "natural-gas-research-notes",
+    "issue": "Individual notes lack author-specific citations and do not separate empirical evidence revision from later packaging/editorial changes.",
+    "evidence_before": "Each byline said only Henry Hub Research plus note number/date; individual source links pinned ba3b94ba while the extracted repository originated from a later source snapshot, without explaining the distinction.",
+    "fix": "Name John Barreto in both bylines, add reproducible citation/edition statements, identify the empirical revision separately from the standalone snapshot record, and state that editorial clarifications do not create new results.",
+    "paths": [
+      "lab/research/storage-weather.md",
+      "lab/research/curve-repricing.md",
+      "lab/research/REPRODUCE.md",
+      "README.md",
+      "lab/research/storage-weather.html",
+      "lab/research/curve-repricing.html"
+    ],
+    "verification": "Both Markdown and generated HTML carry matching author, date and empirical revision; renderer sync and local-link validation pass."
+  }
+]
