@@ -8,6 +8,12 @@ What happened to Henry Hub the last time the same conditions appeared? I built t
 
 [Explore the matched dates](https://neurax-jb.github.io/Henry-Hub-Futures-Curve-Explorer-How-the-Natural-Gas-Market-prices-winter/lab/patterns/) · [Open the code and data](https://github.com/NeuraX-JB/natural-gas-pattern-lab)
 
+## Natural Gas Field Studies · Ten-book series
+
+I directed this series on U.S. natural gas, from storage and industrial demand to Henry Hub futures. AI tools conducted the analyses and prepared the books and research companions. In Book 10, the front-month chart and the incoming contract moved in opposite directions on 57 of 235 verified handoffs.
+
+[Browse all ten books and research files](https://github.com/NeuraX-JB/natural-gas-research-notes/tree/main/field-studies) · [Open the reading edition](https://neurax-jb.github.io/natural-gas-research-notes/field-studies/)
+
 ## When does weather improve a storage estimate?
 
 Across 463 weeks, adding observed U.S. weather to a five-year seasonal median cut the average absolute miss on weekly Lower 48 storage changes from **30.50 to 20.50 billion cubic feet (Bcf)**. Most of the gain came in winter. In summer the seasonal median came closer on average.
