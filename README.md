@@ -37,15 +37,3 @@ These are research snapshots and historical scenarios. Each repository contains 
 | Industrial gas cost simulator | How do procurement assumptions change historical fuel costs? | Illustrative Henry Hub cost scenarios | [Demo](https://neurax-jb.github.io/industrial-gas-cost-simulator/) · [Code](https://github.com/NeuraX-JB/industrial-gas-cost-simulator) |
 | Natural gas data API | How can storage, weather and price observations be joined consistently? | Static JSON/CSV datasets with source metadata | [Demo](https://neurax-jb.github.io/natural-gas-data-api/) · [Code](https://github.com/NeuraX-JB/natural-gas-data-api) |
 | Research notes | What can the studies establish, and what remains untested? | Methods, findings and limitations | [Read](https://neurax-jb.github.io/natural-gas-research-notes/) · [Sources](https://github.com/NeuraX-JB/natural-gas-research-notes) |
-
-## How I work
-
-I use Python and NumPy for data preparation and statistical work, JavaScript for interactive inspection, and versioned datasets and automated checks for reproducibility. I distinguish observed data from forecasts, calendar spreads from outright prices, and historical fit from evidence available at a real decision cutoff.
-
-Current priorities are regional weather inputs, source-release timing, frozen forecasts and evaluation across winters. These are research questions, not claims that the current portfolio has solved them.
-
-## Corrections and review
-
-Found an error or a conclusion that goes beyond its evidence? Open an issue in the relevant repository with the page, input values or dates, observed result, and expected behavior. Each project has a structured correction form.
-
-See the [100-point review and fixes](AUDIT_100.md) for the dated change record and verification details. Research and educational work; not investment advice.
