@@ -14,11 +14,12 @@ Weeks are grouped by the month of the storage Friday, with December through Febr
 
 [Read the storage study](https://neurax-jb.github.io/natural-gas-research-notes/lab/research/storage-weather.html) · [Inspect the 463 weekly results](https://github.com/NeuraX-JB/henry-hub-storage-forecaster/blob/30148e34f458c2caa057ce36472e3a457f04064f/lab/storage/backtest.csv) · [Open the storage dashboard](https://neurax-jb.github.io/henry-hub-storage-forecaster/lab/storage/) · [Storage code and instructions](https://github.com/NeuraX-JB/henry-hub-storage-forecaster)
 
-## Three comparisons to explore
+## Four comparisons to explore
 
 - **Weather revisions.** Two NOAA runs barely changed the national heating outlook for 22–29 November 2026, while Idaho lost nearly 22 heating degree days over those same dates. [Replay Idaho and compare it with the U.S.](https://neurax-jb.github.io/natural-gas-weather-monitor/lab/weather/?earlier=2026-11-20T00:00:00Z&later=2026-11-21T00:00:00Z&metric=hdd&region=ID) · [Weather code](https://github.com/NeuraX-JB/natural-gas-weather-monitor)
 - **Futures curves.** Between June and September 2026, January 2027 gas fell about $0.64 per million Btu. July 2027 fell $0.16. Both prices are reconstructed from fund holdings. [Compare the same nine delivery months](https://neurax-jb.github.io/henry-hub-futures-curve/?data=strips&view=curve&a=2026-06-30&b=2026-09-30&align=delivery) · [Curve code](https://github.com/NeuraX-JB/henry-hub-futures-curve)
 - **Industrial gas costs.** An illustrative paper mill would have spent $17,231 less in the 2025–26 winter replay when it fixed half its monthly gas use. January alone saved more than the winter total. [Change the mill’s assumptions](https://neurax-jb.github.io/industrial-gas-cost-simulator/lab/industrial/) · [Cost calculations](https://github.com/NeuraX-JB/industrial-gas-cost-simulator)
+- **Recurring Henry Hub patterns.** Seven historical dates combined below-average storage, a rise in forecast heating degree days and unchanged cooling degree days. Five spot observations later, prices were higher in four cases and lower in three. [Explore the matched episodes and run the Pattern Lab](https://github.com/NeuraX-JB/natural-gas-pattern-lab)
 
 ## Publications and data
 
