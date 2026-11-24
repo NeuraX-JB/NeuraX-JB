@@ -2,7 +2,7 @@
 
 I study how weather changes the amount of gas in U.S. storage, how Henry Hub prices differ by delivery month, and what those differences mean for an industrial gas buyer.
 
-## Featured project · Natural Gas Pattern Lab
+## Project · Natural Gas Pattern Lab
 
 What happened to Henry Hub the last time the same conditions appeared? I built the Pattern Lab to find those dates and compare what followed. On seven dates, U.S. gas storage was below its five-year average, forecast heating degree days rose and forecast cooling degree days held steady. Five spot-price observations later, Henry Hub was higher in four cases and lower in three.
 
@@ -10,7 +10,7 @@ What happened to Henry Hub the last time the same conditions appeared? I built t
 
 ## Natural Gas Field Studies · Ten-book series
 
-I directed this series on U.S. natural gas, from storage and industrial demand to Henry Hub futures. AI tools conducted the analyses and prepared the books and research companions. In Book 10, the front-month chart and the incoming contract moved in opposite directions on 57 of 235 verified handoffs.
+I directed this series on U.S. natural gas, from storage and industrial demand to Henry Hub futures. AI tools conducted the analyses and prepared the books and research companions. Its some feild studies that are interesting to keep in mind when going about the market of Natural Gas
 
 [Browse all ten books and research files](https://github.com/NeuraX-JB/natural-gas-research-notes/tree/main/field-studies) · [Open the reading edition](https://neurax-jb.github.io/natural-gas-research-notes/field-studies/)
 
